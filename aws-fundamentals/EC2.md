@@ -81,6 +81,26 @@ You can *bootstrap* your instances using EC2 User data. Bootstraping means launc
 * Installing software
 * Downloading common files from the internet 
 
+*Example:* Installing Apache web server on an Amazon Linue 2 instance with a shell script provided to user data:
+
+#!/bin/bash <br>
+yum update - <br>
+yum install httpd -y <br>
+systemctl start httpd <br>
+systemctl enable httpd <br>
+
+#### Instance Metadata
+With the instance metadata service (IMDS), code running on an Amazon EC2 instance can
+discover properties about that instance. The instance metadata service exposes a special IP
+address, 169.254.169.254, which you can query using HTTP to perform lookups.
+
+*Example*
+
+curl 169.254.169.254/latest/meta-data/ <br>
+curl 169.254.169.254/latest/user-data/iam/ <br>
+curl 169.254.169.254/latest/meta-data/ hostname <br>
+
+
 #### Amazon Machine Image
 An image to use to create your instances. These images can be build for Linux or Windows machines. They provide the template for the OS and applications on the root volume of your instance. Each AWS Region
 maintains its own listing of AMIs. Any AMIs that you create are available only within a
@@ -92,6 +112,11 @@ Windows Amazon EC2 instances provide remote access through the Remote Desktop
 Protocol (RDP). To connect to these services, you must have the appropriate inbound rules
 on the security group for the instance.
 
+#### Amazon EC2 Key Pairs
+An Amazon EC2 key pair has a name, and it is composed of a public key and a private key. If
+you specify an Amazon EC2 key pair when you launch the instance, it secures the sign-in
+credentials as part of the Amazon EC2 instance provisioning process.
+
 #### Instance Lifecycle
 An Amazon EC2 instance has three primary states: running, stopped, and terminated.
 Additionally, there are intermediate states of pending, stopping, and shutting down. An
@@ -99,9 +124,9 @@ Amazon EC2 instance accrues charges for the compute resources only when it is in
 charges for persistent storage from any EBS volumes accrue independently from the state of
 the instance.
 
-#### Connecting to Amazon EC2 Instances
+### Connecting to Amazon EC2 Instances
 
-### Amazon EC2 Key Pairs
+#### Amazon EC2 Key Pairs
 An Amazon EC2 key pair has a name, and it is composed of a public key and a private key.
 AWS retains the public key, and it is your responsibility to store the private key securely. If
 you specify an Amazon EC2 key pair when you launch the instance, it secures the sign-in
@@ -113,6 +138,21 @@ encrypted with the public key and can be decrypted with the private key.
 *Example*
 Using SSH with an Amazon EC2 instance
 ssh -i "example-key.pem" ec2-user@[public DNS]
+
+#### Assigning AWS API Credentials
+You can assign an IAM role to an Amazon EC2 instance. The AWS Software Development
+Kit (SDK) and AWS Command Line Interface (AWS CLI) can automatically discover these
+credentials through the Amazon EC2 metadata service. You can skip the task of explicitly
+confi guring credentials fi les on your instances during bootstrapping.
+**AS PREVIOUSLY MENTIONED, DO NOT CONFIGURE EC2 INSTANCES WITH PERSONAL CREDENTIALS.**
+
+You can associate a particular
+instance profi le with many Amazon EC2 instances. However, a particular Amazon
+EC2 instance can be associated with one instance profi le at a time, and an instance
+profile can be associated with only one IAM role. When an instance profi le with an IAM role is associated with an instance, the Amazon
+EC2 service makes the necessary calls to the AWS Security Token Service (AWS STS) automatically
+to generate short-term credentials for that instance. These credentials are based
+on the IAM role associated with the instance profi le.
 
 
 
