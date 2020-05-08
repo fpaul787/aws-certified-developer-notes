@@ -1,14 +1,14 @@
 # IAM: Identity and Access Management
 
-#### AWS Regions and Availability Zones:
+## AWS Regions and Availability Zones:
 AWS has many different data centers and facilities in multiple regions in the world. Each region has its own, separate copies of AWS services. To use these services you must specify which region you using to process the request. 
 
 The data centers located in each AWS region are grouped in Availability Zones. Regions can have multiple Availability Zones (AZ). Having multiple AZs in a region makes the AWS services highly available. 
 
-#### Choosing a Region
+## Choosing a Region
 There are many factors that go into choosing an AWS Region. The factors include latency, price, and data residency. AWS Region strings end in a number (us-east-1, us-west-2). AZ strings end in number (us-east-1a).
 
-#### IAM:
+## IAM:
 
 When you first create an AWS account you will have a root account. When accessing AWS, the root account should **never** be used. The root must never be shared as well. 
 
@@ -31,13 +31,13 @@ permissions collectively.
 
 
 
-#### For big enterprises:
+## For big enterprises:
 - IAM Federation: Integrate their own repository of users with IAM using SAML standard (Active Directory)
 
-#### Policies
+## Policies
 IAM policies define permissions for an action regardless of the method that you use to perform the operation.
 
-#### Policy types
+## Policy types
 - Identity-based policies
   - Attach managed and inline policies to IAM identities (users, groups to which users belong, or roles). Identity-based policies grant permissions to an identity.
 
@@ -56,7 +56,7 @@ IAM policies define permissions for an action regardless of the method that you 
 - Session policies
   - Pass advanced session policies when you use the AWS CLI or AWS API to assume a role or a federated user. Session policies limit the permissions that the role or user's identity-based policies grant to the session. 
 
-#### AWS Policy Simulator
+## AWS Policy Simulator
 - When creating new custom policies you can test using:
   - https://policysim.aws.amazon.com/home/index.jsp
   - This policy tool can you save you time in case your custom policy statement's permission is denied
@@ -65,14 +65,14 @@ IAM policies define permissions for an action regardless of the method that you 
     - If the command is successful, you'll get the message: `Request would have succeeded, but DryRun flag is set`
     - Otherwise, you'll be getting the message: `An error occurred (UnauthorizedOperation) when calling the {policy_name} operation`
 
-#### Custom Policies
+## Custom Policies
 You can define custom policies when you need more control. An IAM policy is a JSON-style document composed of one or more statements. Each statement has an effect that will either allow or deny access
 to specific API actions on AWS resources. A deny statement takes precedence over any
 allow statements. Use an Amazon Resource Name(ARN) to specify precisely the resource or resources to which a custom policy applies. 
 
 
 
-#### Amazon Resource Name
+## Amazon Resource Name
 An ARN always starts with arn: and can include the following components to identify a
 particular AWS resource uniquely:
 - **Partition** Usually aws. For some regions, such as in China, this can have a different

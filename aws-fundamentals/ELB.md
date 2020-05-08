@@ -1,9 +1,9 @@
 # Elastic Load Balancer
 
-#### What are Load Balancers?
+## What are Load Balancers?
 Servers that forward internet traffic to multiple servers (EC2 Instances) downstream. An integral part to directing and managing traffic amoung your instances. For your applications to have high performance and high availability for your users, you will need a load balancer.
 
- #### Why are they used?
+ ## Why are they used?
 
  * Spread load acroos multiple downstream instances
  * Expose a single point of access (DNS) to your application
@@ -13,7 +13,7 @@ Servers that forward internet traffic to multiple servers (EC2 Instances) downst
  * Separate public traffic from private traffic
 
 
- #### Types of Load Balancer on AWS
+ ## Types of Load Balancer on AWS
  <h5>AWS has **3 kinds of Load Balancers**</h5>
 
 * Application Load Balancer
@@ -52,10 +52,10 @@ Load Balancer for Layer 4).
     * This LB is deprecated
 
 
-#### Health Checks
+## Health Checks
 Health Checks are crucial for Load Balancers. Health Checks allow the load balancer to determine if the instances it forwards traffic to are available to reply to requests. 
 
-#### Load Balancer
+## Load Balancer
 * Any Load Balancer (CLB, ALB, NLB) has a static host name. Do not
 resolve and use underlying IP
 * LBs can scale but not instantaneously – contact AWS for a “warm-up”

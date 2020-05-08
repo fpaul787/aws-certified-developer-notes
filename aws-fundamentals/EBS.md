@@ -5,7 +5,7 @@ Amazon Elastic Block Store (Amazon EBS) service to provide block storage devices
 Amazon EC2 instances. Certain instance types enable you to mount volumes based on an
 instance store, which is temporary storage local to the host machine.
 
-#### Persistent Storage
+## Persistent Storage
 For Amazon EC2 instances, Amazon EBS provides persistent block storage. Similar to a
 hard drive, block storage volumes provide read/write access at a block level and can be
 formatted with a file system. Also, you can attach each EBS volume
@@ -25,7 +25,7 @@ EBS snapshots is automatically replicated across multiple Availability Zones wit
 region, and these snapshots can be used to create new volumes. If there’s an accidental
 delete or other application error, snapshots enable you to recover your data.
 
-#### Amazon EBS Volumes
+## Amazon EBS Volumes
 *Amazon EBS volumes* persist independently from the running life of an Amazon EC2
 instance. After a volume is attached to an instance, use it like any other physical hard drive.
 
@@ -55,7 +55,7 @@ workloads
 
 **SC1 (HDD):** Lowest cost HDD volume designed for less frequently accessed workloads
 
-#### Amazon EBS Snapshots
+## Amazon EBS Snapshots
 * EBS Volumes can be backed up using “snapshots”
 
 * Snapshots only take the actual space of the blocks on the volume
@@ -70,7 +70,7 @@ snapshot will only be 5GB
         *   Changing the volume
         *   Encrpyt a volume
 
-#### EBS Encryption
+## EBS Encryption
 For simplified data encryption, create encrypted Amazon EBS volumes with the Amazon
 EBS encryption feature. All Amazon EBS volume types support encryption, and you
 can use encrypted Amazon EBS volumes to meet a wide range of data-at-rest encryption
@@ -82,7 +82,7 @@ Service (AWS KMS).* The encryption occurs on the server that hosts the Amazon EC
 instance, providing encryption of data in transit from the Amazon EC2 instance to
 Amazon EBS storage.
 
-#### EBS vs Instance Store
+## EBS vs Instance Store
 Amazon EC2 instance store is another type of block storage available to your Amazon EC2
 instances. It provides temporary block-level storage, and the storage is located on disks that are physically attached to the host computer (unlike Amazon EBS volumes, which are
 network-attached).
@@ -97,7 +97,7 @@ network-attached).
 
 **Overall, EBS-backed instances should fit most applications workloads**
 
-#### Summary 
+## Summary 
 * EBS can be attached to only one instance at a time
 * EBS are locked at the AZ level
 * Migrating EBS volume across AZ means first creating a snapshot of it, then screating it in other AZ
