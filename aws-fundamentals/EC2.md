@@ -152,7 +152,7 @@ EC2 instance can be associated with one instance profi le at a time, and an inst
 profile can be associated with only one IAM role. When an instance profi le with an IAM role is associated with an instance, the Amazon
 EC2 service makes the necessary calls to the AWS Security Token Service (AWS STS) automatically
 to generate short-term credentials for that instance. These credentials are based
-on the IAM role associated with the instance profi le.
+on the IAM role associated with the instance profile.
 
 
 
