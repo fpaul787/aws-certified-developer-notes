@@ -182,3 +182,55 @@ Use read replicas to relieve pressure on your master node with additional
 read capacity. You can bring your data closer to applications in different regions and
 promote a read replica to a master for faster recovery in the event of a disaster.
 
+## Essentials
+**Know what a relational database is.** A relational database consists of one or more tables.
+Communication to and from relational databases usually involves simple SQL queries, such
+as “Add a new record” or “What is the cost of product x?” These simple queries are often
+referred to as online transaction processing (OLTP).
+
+**Know what a nonrelational database is.**  Nonrelational databases do not have a
+hard-defined data schema. They can use a variety of models for data management,
+such as in-memory key-value stores, graph data models, and document stores. These
+databases are optimized for applications that have a large data volume, require low
+latency, and have flexible data models. In nonrelational databases, there is no concept
+of foreign keys.
+
+**Understand the database options available on AWS.**  You can run all types of databases on
+AWS. You should understand that there are managed and unmanaged options available, in
+addition to relational, nonrelational, caching, graph, and data warehouses.
+
+**Understand which databases Amazon RDS supports.** Amazon RDS currently supports six
+relational database engines:
+* Microsoft SQL Server
+* MySQL
+* Oracle
+* PostgreSQL
+* MariaDB
+* Amazon Aurora
+
+**Understand the operational benefits of using Amazon RDS.**  Amazon RDS is an AWS
+managed service. AWS is responsible for patching, antivirus, and the management of the
+underlying guest OS for Amazon RDS. Amazon RDS greatly simplifies the process of setting
+a secondary slave with replication for failover and setting up read replicas to offload
+queries.
+
+**Remember that you cannot access the underlying OS for Amazon RDS DB instances.**  You
+cannot use Remote Desktop Protocol (RDP) or SSH to connect to the underlying OS. If
+you need to access the OS, install custom software or agents. If you want to use a database
+engine that Amazon RDS does not support, consider running your database on an Amazon
+EC2 instance instead.
+
+**Understand that Amazon RDS handles Multi-AZ failover for you.** If your primary
+Amazon RDS instance becomes unavailable, AWS fails over to your secondary instance
+in another Availability Zone automatically. This failover is done by pointing your existing
+database endpoint to a new IP address. You do not have to change the connection string
+manually; AWS handles the DNS changes automatically.
+Remember that Amazon RDS read replicas are used for scaling out and increased
+performance. This replication feature makes it easy to scale out your read-intensive
+databases. Read replicas are currently supported in Amazon RDS for MySQL, PostgreSQL,
+and Amazon Aurora. You can create one or more replicas of a database within a single AWS
+Region or across multiple AWS Regions. Amazon RDS uses native replication to propagate
+changes made to a source DB instance to any associated read replicas. Amazon RDS also
+supports cross-region read replicas to replicate changes asynchronously to another geography
+or AWS Region.
+

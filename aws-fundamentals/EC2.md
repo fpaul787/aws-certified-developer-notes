@@ -155,5 +155,50 @@ to generate short-term credentials for that instance. These credentials are base
 on the IAM role associated with the instance profile.
 
 
+## Summary
+Amazon Elastic Compute Cloud (Amazon EC2) instances are compute environments that
+provide you with full control over the operating system and software. The instance type
+and instance size determine the hardware available to an instance. This includes properties
+such as vCPU, RAM, access to local storage, and network bandwidth. Amazon Elastic
+Block Store (Amazon EBS) provides persistent storage for EC2 instances. 
+
+An Amazon
+Machine Image (AMI) provides the template for the software on the instance. Additionally,
+user data allows you to run a script on the instance to automatically update the software
+on the instance. To make AWS API calls from code running on an EC2 instance, assign an
+AWS Identity and Access Management (IAM) role to the instance by way of an instance
+profile. Use Amazon CloudWatch to collect instance monitoring and utilization metrics.
+
+## Essential
+**Know the basics of Amazon EC2, such as resource types, instance types, AMIs, and storage.**
+Be familiar with launching and connecting to Amazon EC2 instances. Understand the
+resource types of Amazon EC2 instance types. Be familiar with the purpose of an AMI
+in relation to launching an instance. Understand the distinction between persistent and
+ephemeral storage related to a particular Amazon EC2 instance.
+
+**Know about user data, instance metadata, and credentials. Be familiar with using user
+data to customize the software by executing scripts on instances.** 
+Any scripts or code running
+on an instance can use the Amazon EC2 metadata service to discover the instance
+configuration. Use IAM roles to provide AWS Cloud API credentials automatically to code
+running on an Amazon EC2 instance.
+
+**Know how Amazon EC2 communicates with Amazon VPC.** Understand the relationship
+between an EC2 instance and the Amazon VPC network. There may be questions
+that ask you to troubleshoot issues related to connecting to an Amazon EC2 instance. Be
+familiar with how Amazon VPC enables communication between Amazon EC2 instances
+within the same Amazon VPC and isolates those instances from other Amazon VPCs.
+Recognize how route tables, network access control lists, and security groups control network
+traffic.
+
+**Know about public and private subnets. Within an Amazon VPC, you must be able to
+distinguish between public and private subnets.**  Public subnets allow you to assign public
+IPv4 addresses to Amazon EC2 instances. By contrast, instances in a private subnet have
+only private IP addresses. The key distinction is that public subnets have a route table entry
+that forwards internet-bound traffic to an internet gateway. Private subnets do not have
+a direct route to the internet. Instead, these subnets have a route that forwards internetbound
+traffic through a NAT gateway or NAT instance.
+
+
 
 
