@@ -104,6 +104,8 @@ on a particular Amazon VPC, on a subnet, or on a specific elastic network interf
 as for an Amazon EC2 instance.
 
 
+
+
 ### Summary
 * These topics are not covered to much in the exam
 * All new accts come with default VPC

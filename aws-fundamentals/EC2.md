@@ -26,17 +26,21 @@ If your application can not be accessed, then most likely it's a security group 
 
 ## Instance Types
 * On Demand Instance: you pay for compute capacity by the hour or the second depending on which instances you run.
+    * You don't have to commit for a long time 
+    * Recommended for workloads that allow you to predict how the application will behave.
 
 * Reserved Instances: long workloads (>= 1 year)
     * Applications with steady state usage
     * Applications that may require reserved capacity
     * Customers that can commit to using EC2 over a 1 or 3 year term to reduce their total computing costs
+    * Recommended for applications that have steady usage. (databases)
 * Convertible Reserved Instances: long workloads with flexible instances
 * Scheduled Reserved Instances: launch within time window you reserve
 * Spot Instances: allow you to request spare Amazon EC2 computing capacity for up to 90% off the On-Demand price.
     * Applications that have flexible start and end times
     * Applications that are only feasible at very low compute prices
     * Users with urgent computing needs for large amounts of additional capacity
+    * You can lose the instances if your max price is less than the current spot price. 
 * Dedicated Instances: no other customers will share your hardware
     * Instances running on hardware dedicated to your
 * Dedicated Hosts: book an entire physical server, control instance placement
@@ -169,6 +173,17 @@ on the instance. To make AWS API calls from code running on an EC2 instance, ass
 AWS Identity and Access Management (IAM) role to the instance by way of an instance
 profile. Use Amazon CloudWatch to collect instance monitoring and utilization metrics.
 
+## Elastic Network Interfaces (ENI)
+* Logical component in VPC that represents a network card.
+
+* Has the following attributes
+    * Primary private IPv4, one or more secondary IPv4
+    * One Elastic IP (IPv4) per private IPv4
+    * One Public IPv4
+    * One or more security groups
+    * A MAC address
+* The ENI is bound to a specific availability zone(AZ)
+
 ## Essential
 **Know the basics of Amazon EC2, such as resource types, instance types, AMIs, and storage.**
 Be familiar with launching and connecting to Amazon EC2 instances. Understand the
@@ -176,8 +191,8 @@ resource types of Amazon EC2 instance types. Be familiar with the purpose of an 
 in relation to launching an instance. Understand the distinction between persistent and
 ephemeral storage related to a particular Amazon EC2 instance.
 
-**Know about user data, instance metadata, and credentials. Be familiar with using user
-data to customize the software by executing scripts on instances.** 
+**Know about user data, instance metadata, and credentials.** Be familiar with using user
+data to customize the software by executing scripts on instances.  
 Any scripts or code running
 on an instance can use the Amazon EC2 metadata service to discover the instance
 configuration. Use IAM roles to provide AWS Cloud API credentials automatically to code
