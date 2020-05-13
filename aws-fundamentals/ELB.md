@@ -17,6 +17,7 @@ Servers that forward internet traffic to multiple servers (EC2 Instances) downst
  <h5>AWS has **3 kinds of Load Balancers**</h5>
 
 * Application Load Balancer
+    * Great if you're using micro services & container-based application
     * Provides advanced request routing targeted at delivery
 of modern application architectures, including microservices and container-based
 applications. It simplifies and improves the security of your application by ensuring
