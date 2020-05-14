@@ -29,6 +29,14 @@ delete or other application error, snapshots enable you to recover your data.
 *Amazon EBS volumes* persist independently from the running life of an Amazon EC2
 instance. After a volume is attached to an instance, use it like any other physical hard drive.
 
+It is a network drive(not physical). Uses the network to communicate the instance, so there might be some latency.
+
+
+#### Provisioned capacity 
+* You get billed for all the provisioned capacity
+    * If you provision 1GB but use 500mb, you still get charged for 1GB
+
+
 
 Amazon EBS provides the following volume types, which differ in performance characteristics
 and price so that you can tailor your storage performance and cost to the needs of
