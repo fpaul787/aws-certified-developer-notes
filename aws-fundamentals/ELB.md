@@ -66,6 +66,13 @@ resolve and use underlying IP
 * Load Balancer Errors 503 means at capacity or no registered target
 * If the LB can’t connect to your application, check your security groups.
 
+## Load Balancer Stickiness
+* You can implement stickiness so client is always redirected to the same instance behind a load balancer.
+* Stickiness works for Classic Load Balancers & Application Load Balancer
+
+The use case for stickiness is that the user does not lose session data. 
+
+
 
 
 
