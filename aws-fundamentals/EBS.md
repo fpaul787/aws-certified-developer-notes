@@ -54,9 +54,17 @@ than IOPS.
 
 **GP2 (SSD):** General purpose SSD volume that balances price and performance for a
 wide variety of workloads
+* Use Cases
+    * System boot volumes
+    * Virtual desktops
+    * Low-latency interactive apps
+    * Development and test environment
+* 
 
 **IO1 (SSD):** Highest-performance SSD volume for mission-critical low-latency or highthroughput
 workloads
+* Large database workloads
+* 4GiB - 16 TiB
 
 **ST1 (HDD):** Low cost HDD volume designed for frequently accessed, throughputintensive
 workloads
