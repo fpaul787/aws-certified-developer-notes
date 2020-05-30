@@ -61,15 +61,23 @@ wide variety of workloads
     * Development and test environment
 * 
 
-**IO1 (SSD):** Highest-performance SSD volume for mission-critical low-latency or highthroughput
+**IO1 (SSD):** Highest-performance SSD volume for mission-critical low-latency or high throughput
 workloads
 * Large database workloads
 * 4GiB - 16 TiB
 
-**ST1 (HDD):** Low cost HDD volume designed for frequently accessed, throughputintensive
+**ST1 (HDD):** Low cost HDD volume designed for frequently accessed, throughput intensive
 workloads
+* Streaming workloads requiring consistent, fast throughput at a low price.
+* Big data, Data warehouses, Log processing
+* Apache Kafka
+* Cannot be a boot volume
+* 500 GiB - 16TiB
 
 **SC1 (HDD):** Lowest cost HDD volume designed for less frequently accessed workloads
+* Used when lowest storage cost is important
+* Cannot be a boot volume
+* 500 GiB - 16TiB
 
 ## Amazon EBS Snapshots
 * EBS Volumes can be backed up using “snapshots”
@@ -109,6 +117,7 @@ network-attached).
     * On termination, the instance store is lost
     * You can’t resize the instance store
     * Backups must be operated by the user
+    * Data could be lost if hardware fails
     
 
 **Overall, EBS-backed instances should fit most applications workloads**
